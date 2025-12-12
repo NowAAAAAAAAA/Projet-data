@@ -1,7 +1,7 @@
 from dash import dcc, html
 import dash_bootstrap_components as dbc
 
-# Dictionnaire des noms de départements pour l'affichage
+# Dictionnaire des noms de départements pour l'affichage 
 DEPARTEMENTS = {
     '01': 'Ain', '02': 'Aisne', '03': 'Allier', '04': 'Alpes-de-Haute-Provence', 
     '05': 'Hautes-Alpes', '06': 'Alpes-Maritimes', '07': 'Ardèche', '08': 'Ardennes', 
@@ -107,7 +107,7 @@ def create_layout(dept_codes, types_biens, min_price, max_price):
             dcc.Input(
                 id='filter-min-sales',
                 type='number',
-                value=2, # Default
+                value=2, # Valeur Default
                 min=0,
                 style={'width': '100%', 'margin-bottom': '1rem', 'color': 'black'}
             ),
