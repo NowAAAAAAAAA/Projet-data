@@ -10,6 +10,18 @@ CSV_DETAIL_PATH = os.path.join("data", "cleaned", "data_detail.csv")
 # On traite par paquet de 100 000 lignes pour ne pas saturer la RAM
 CHUNK_SIZE = 100000 
 
+# --- FONCTION DE CORRECTION PLM ---
+def fix_plm_codes(code):
+    """
+    Transforme les arrondissements en la commune principale.
+    Ex: 75112 -> 75056 (Paris)
+    """
+    code = str(code)
+    if code.startswith('751'): return '75056' # Paris
+    if code.startswith('132'): return '13055' # Marseille
+    if code.startswith('693'): return '69123' # Lyon
+    return code
+
 def process():
     print("Démarrage du traitement France Entière (CSV)...")
     
@@ -39,7 +51,10 @@ def process():
         chunk = chunk[chunk['surface_reelle_bati'] > 9]
         chunk = chunk[chunk['valeur_fonciere'] > 1000]
 
-        # 2. Calculs
+        # 2. Correction des codes communes PLM
+        chunk['code_commune'] = chunk['code_commune'].apply(fix_plm_codes)
+
+        # 3. Calculs
         chunk['prix_m2'] = chunk['valeur_fonciere'] / chunk['surface_reelle_bati']
         # Filtre des prix aberrants
         chunk = chunk[(chunk['prix_m2'] > 500) & (chunk['prix_m2'] < 25000)]
