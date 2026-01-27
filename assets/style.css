@@ -1,0 +1,169 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.sidebar-header h2 {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.filter-label {
+    margin-top: 1.5rem;
+    font-weight: 500;
+    color: #bdc3c7;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Customizing Dash Components in Sidebar */
+.sidebar .dash-dropdown .Select-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.sidebar .dash-dropdown .Select-value-label {
+    color: white !important;
+}
+
+.sidebar .dash-dropdown .Select-menu-outer {
+    background-color: #34495e;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Update Button */
+.btn-update {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-update:hover {
+    background-color: #2980b9;
+}
+
+.rc-slider-rail {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.rc-slider-track {
+    background-color: #3498db !important;
+}
+
+.rc-slider-handle {
+    border-color: #3498db !important;
+    background-color: #ecf0f1 !important;
+}
+
+.rc-slider-mark-text {
+    color: #bdc3c7 !important;
+}
+
+/* Content Area */
+.content {
+    margin-left: 320px;
+    padding: 2rem;
+    transition: margin-left .3s;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 600;
+    color: #2c3e50;
+    padding: 1.25rem;
+    font-size: 1.1rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* KPIs */
+.kpi-value {
+    color: #2980b9;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 0.2rem;
+}
+
+small.text-muted {
+    font-size: 0.85rem;
+    color: #7f8c8d !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
+}
+
+/* Specific component tweaks */
+#map-graph {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dash-graph {
+    border-radius: 8px;
+}
